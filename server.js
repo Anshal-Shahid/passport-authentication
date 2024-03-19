@@ -6,6 +6,8 @@ const app=express()
 const dotenv=require('dotenv')
 const bodyParser=require("body-parser")
 dotenv.config()
+const cookie=require("cookie-parser")
+const session=require("express-session")
 // const {errorHandler}=require("./middleware/errorHandler.js");
 
 connectDB()
@@ -19,6 +21,12 @@ app.set("view engine","ejs")
 app.use(express.json())
 app.use(bodyParser.urlencoded( { extended: true} ))
 app.use(errorHandler)
+app.use(cookie())
+app.use(session({
+    secret: 'your_secret_key_here',
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 app.use("/app",require("./routes/index.routes.js"))

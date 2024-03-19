@@ -6,8 +6,79 @@
     <title>node.js Passport app</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello</h1>
-    </div>
+    <main>
+        <form action="/app/logout" method="POST">
+            <button><a href="/app/logout">logout</a></button>    </form>
+        <h1>Hello , <%= user %></h1>
+    </main>
 </body>
+<style>
+    body{
+        background-color: rgb(233, 213, 198);
+    }
+    h1{
+        text-align: center;
+        font-size: 5rem;
+        color: rgb(102, 49, 12);
+        position: relative;
+        top: 1rem;
+    }
+    a{
+        text-decoration: none;
+        color: white ;
+    }
+    button{
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -200%);
+        width: 8.4rem;
+        height: 3.4rem;
+        border-radius: .4rem;
+        border: none;
+        background-color: chocolate;
+        color: white !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+    }
+    button:hover{
+        cursor: pointer;
+        box-shadow: inset 1px 1px 30px rgb(107, 50, 9);
+        color:   black;
+    }
+    button:hover a{
+        color: rgb(239, 223, 210);
+    }
+    @media (max-width:800px) {
+        h1{
+            font-size: 3.5rem;
+        }
+        button{
+            /* top: 60%; */
+            width: 7.4rem;
+            height: 3rem;
+
+        }
+       
+    }
+    @media (max-width:400px) {
+        h1{
+            position: relative;
+            top: 4rem;
+            font-size: 2.9rem;
+        }
+        button{
+            /* top: 55%; */
+            width:  6.4rem;
+            height: 2.6rem;
+        }
+    }
+</style>
+<script>
+    let btn= document.querySelector("button");
+    btn.addEventListener('click', ()=>{
+
+    })
+</script>
 </html>

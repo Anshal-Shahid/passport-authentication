@@ -1,22 +1,13 @@
-
 const express=require("express")
+const router = express.Router();
+const {home}=require("../controllers/home.controller.js")
 
 
-const router=express.Router();
-
-router.get("/",(req,res)=>{
-    
-    console.log("df szc zsds dlb");
-    
-    const a=req.headers.authorization;
-    console.log(a);
-    console.log("abe yar!");
-    res.render("welcome.ejs")
-})
+router.get("/", home)
 
 
 
 
-module.exports=router
+module.exports = router
 
 
